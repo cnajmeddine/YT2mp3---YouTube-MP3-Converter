@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link rel="stylesheet" href="/CSS/style.css">
+    <title>YT2mp3 Converter</title>
+</head>
+
+<body>
+    
+    <div class="top-container">
+        <form action="/convert-mp3" method="POST" id="form">
+            <h1><i class="fa-brands fa-youtube"></i>Youtube MP3 Converter</h1>
+            <h4>Enter your video's Id below</h4>
+            <div>
+                <input type="text" name="videoID" placeholder="Your video's Id"><button id="convert-btn">Convert</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="bottom-container">
+        <% if(typeof success != "undefined" && success) { %>
+            <div class="success">
+                <p><%= video_title %></p>
+                <a href="<%= video_link%>"><button id="download-btn">Download</button></a>
+            </div>
+        <% } else if(typeof success != "undefined" && !success) {%>
+            <div class="errors">
+                <p><%= message %></p>
+            </div>
+            <% } %>
+    </div>
+
+    <div class="about">
+        <h3>Best YouTube to MP3 Downloader</h3>
+        <p>
+            <br>YT2mp3 is the easiest and simplest free YouTube MP3 Converter to convert and download YouTube videos in mp3 with the best quality. By using our online converter, you can instantaneously convert and download your favourite videos safely without the need of installing any 3rd party applications. YT2mp3 works for all browsers and all devices.
+        </p>
+    </div>
+
+    <div class="usage">
+        <h3>How To Use ?</h3>
+        <p>
+            <br>Copy the video's Id from the address bar and paste it in the input above to convert and download your video.<br>
+        </p>
+        <img src="/Assets/VidID.jpg" alt="HowToUse">
+    </div>
+
+</body>
+
+</html>
